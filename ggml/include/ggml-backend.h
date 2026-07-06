@@ -70,6 +70,9 @@ extern "C" {
     // tensor copy between different backends
     GGML_API void ggml_backend_tensor_copy(const struct ggml_tensor * src, struct ggml_tensor * dst);
 
+    // rebind a tensor to a new buffer and data pointer (useful for VRAM overlay/swapping)
+    GGML_API void ggml_backend_tensor_rebind(struct ggml_tensor * tensor, ggml_backend_buffer_t buffer, void * data);
+
     //
     // Backend (stream)
     //
